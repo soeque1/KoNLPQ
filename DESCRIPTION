@@ -9,6 +9,6 @@ Description: More about what it does (maybe more than one line)
 License: GPL-3
 Encoding: UTF-8
 Depends: R (>= 2.15.0), rJava (>= 0.9-0), utils (>= 2.14.0), stringr
-        (>= 0.6.2), hash (>= 2.2.6), tau (>= 0.0-15), KoNLP
-Collate: 'onLoad.R' 'kkma.extractPOS.R'
+        (>= 0.6.2), KoNLP (>= 0.0.0)
+Collate: 'onLoad.R' 'initObj.R' 'kkma.extractPOS.R'
 NeedsCompilation: no
