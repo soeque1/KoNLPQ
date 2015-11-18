@@ -1,9 +1,14 @@
 Package: KoNLPQ
 Type: Package
-Title: What the package does (short line)
-Version: 1.0
+Title: POS tagging + Topic Model
+Version: 0.1
 Date: 2015-11-19
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
+Author: James Kim
+Maintainer: James Kim <kim@mindscale.kr>
 Description: More about what it does (maybe more than one line)
-License: What license is it under?
+License: GPL-3
+Encoding: UTF-8
+Depends: R (>= 2.15.0), rJava (>= 0.9-0), utils (>= 2.14.0), stringr
+        (>= 0.6.2), hash (>= 2.2.6), tau (>= 0.0-15), KoNLP
+Collate: 'onLoad.R' 'kkma.extractPOS.R'
+NeedsCompilation: no

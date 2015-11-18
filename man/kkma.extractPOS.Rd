@@ -18,13 +18,3 @@ N : Noun
 V : Verb
 NV : N or V
 }
-\examples{
-function (strings, POS = "NV") 
-{
-    res = .jrcall(KkmaObj, "morphAnalyzer", strings)
-    res = .jstrVal(res)
-    expr = paste0("([A-Z]+)\\/[", POS, "]")
-    res = str_match_all(res, expr)[[1]][, 2]
-    res
-  }
-}
