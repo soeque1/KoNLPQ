@@ -1,0 +1,4 @@
+export(.onLoad)
+export(.onObj)
+export(kkma.extractPOS)
+import(KoNLP)
