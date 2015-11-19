@@ -8,7 +8,7 @@ function(lib, pkg  = "KoNLPQ") {
     pathToSdk <- paste0(system.file(package = pkg) , tempDir, '/java/')
     
     jarPaths <- c(paste0(pathToSdk, "kkma-2.0.jar"),
-                  paste0(pathToSdk, "qunatlab.jar"),
+                  paste0(pathToSdk, "lucypark.jar"),
                   paste0(pathToSdk, "korean-text-3.0.jar"),
                   paste0(pathToSdk, "scala-library-2.11.6.jar"),
                   paste0(pathToSdk, "twitter-text-1.11.1.jar"))
