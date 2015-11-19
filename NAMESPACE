@@ -1,5 +1,7 @@
 export(.onLoad)
 export(kkma.extractPOS)
+export(kkma.extractNoun)
+export(twi.extractPOS)
+export(twi.extractNoun)
 import(rJava)
 import(stringr)
-import(KoNLP)
