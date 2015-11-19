@@ -1,5 +1,5 @@
 export(.onLoad)
-export(initObj)
 export(kkma.extractPOS)
 import(rJava)
+import(stringr)
 import(KoNLP)

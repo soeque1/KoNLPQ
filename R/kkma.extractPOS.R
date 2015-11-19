@@ -1,7 +1,7 @@
 kkma.extractPOS <-
 function(strings, POS = 'NV')
 {
-    res = .jrcall(KkmaObj, 'morphAnalyzer', strings)
+    res = .jrcall(get("KkmaObj",envir=KoNLPQ:::.KoNLPQEnv), 'morphAnalyzer', strings)
     res = .jstrVal(res)
     ## N = Noun, V = Verb
     expr = paste0('([가-힣]+)\\/[', POS, ']')
