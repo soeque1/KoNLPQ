@@ -15,10 +15,10 @@ r_binary_packages:
  - rJava
  - stringr
  - KoNLP
+ - devtools
  - testthat
  
 r_github_packages:
- - devtools
  - jimhester/covr
 
 after_success:
