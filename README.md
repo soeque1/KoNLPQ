@@ -1,5 +1,6 @@
 # KoNLPQ
-NLPs
+NLPs  
+https://travis-ci.org/soeque1/KoNLPQ.svg  
 
 ### 실행법
 library(devtools)  
