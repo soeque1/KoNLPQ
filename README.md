@@ -1,6 +1,9 @@
 # KoNLPQ
 NLPs  
 <img src='https://travis-ci.org/soeque1/KoNLPQ.svg'>
+<a href="https://codecov.io/github/soeque1/KoNLPQ?branch=master">
+  <img src="https://codecov.io/github/soeque1/KoNLPQ/coverage.svg?branch=master" alt="Coverage via Codecov" />
+</a>
 
 ### 실행법
 library(devtools)  
