@@ -1,0 +1,16 @@
+language: r
+
+# Be strict when checking our package
+warnings_are_errors: true
+
+# System dependencies for HTTP calling
+r_binary_packages:
+ - rJava
+ - utils
+ - stirngr
+ - KoNLP
+
+# Install the bleeding edge version of a package from github (eg to pick
+# up a not-yet-released bugfix)
+r_github_packages:
+ - soeque1/KoNLPQ
