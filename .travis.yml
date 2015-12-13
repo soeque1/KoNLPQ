@@ -10,6 +10,9 @@ before_install:
   - export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
   - brew install jdk
   - export JAVA_HOME=/home/travis/.linuxbrew/Cellar/jdk/1.7.0_79
+  
+script:
+  - java -version
 
 r_binary_packages:
  - rJava
