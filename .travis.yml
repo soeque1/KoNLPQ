@@ -33,11 +33,6 @@ after_failure:
 # after_success:
  - Rscript -e 'library(covr);coveralls()'
 
-branches:
-  except:
-  - /-expt$/
-  - solaris
-
 notifications:
   email:
     on_success: change
