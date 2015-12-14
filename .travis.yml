@@ -12,6 +12,7 @@ before_install:
 #  - export JAVA_HOME=/home/travis/.linuxbrew/Cellar/jdk/1.7.0_80
 #  - jdk_switcher use openjdk7
   - java -version
+  - sudo rm /var/lib/apt/lists/* -vf
 #  - sudo ln -f -s $(/usr/libexec/java_home)/jre/lib/server/libjvm.dylib /usr/lib
   - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
   - chmod 755 ./travis-tool.sh
