@@ -40,7 +40,7 @@ after_failure:
 after_success:
  - Rscript -e 'library(covr);coveralls()'
 
-notifications:
-  email:
-    on_success: change
-    on_failure: change
+#notifications:
+#  email:
+#    on_success: change
+#    on_failure: change
