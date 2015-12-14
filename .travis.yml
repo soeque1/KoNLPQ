@@ -22,15 +22,15 @@ install:
 
 before_script:
 # Install dplyr package then cache sqlite and postgres version of Lahman
-  - R CMD INSTALL .
-  - Rscript -e "library(rJava); library(stringr); library(KoNLP); library(testthat)"
+- R CMD INSTALL .
+- Rscript -e "library(rJava); library(stringr); library(KoNLP); library(testthat)"
 # lahman_postgres; #nycflights13_postgres()
 script: ./travis-tool.sh run_tests
 
 after_failure:
   - ./travis-tool.sh dump_logs
 
-# after_success:
+after_success:
  - Rscript -e 'library(covr);coveralls()'
 
 notifications:
