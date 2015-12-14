@@ -2,14 +2,14 @@ language: c
 sudo: required
 
 before_install:
-#  - rm -rf ~/.linuxbrew
-#  - yes | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
+  - rm -rf ~/.linuxbrew
+  - yes | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
   - export PATH="$HOME/.linuxbrew/bin:$PATH"
   - export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
   - export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
-#  - brew install jdk
-#  - export JAVA_HOME=/home/travis/.linuxbrew/Cellar/jdk/1.8.0-60
-  - export JAVA_HOME=/home/travis/.linuxbrew/Cellar/jdk/1.7.0_80
+  - brew install jdk
+  - export JAVA_HOME=/home/travis/.linuxbrew/Cellar/jdk/1.8.0-60
+#  - export JAVA_HOME=/home/travis/.linuxbrew/Cellar/jdk/1.7.0_80
 #  - jdk_switcher use openjdk7
   - java -version
 #  - sudo ln -f -s $(/usr/libexec/java_home)/jre/lib/server/libjvm.dylib /usr/lib
@@ -20,8 +20,8 @@ install:
   - mkdir ~/.R
   - ./travis-tool.sh install_github jimhester/covr
 #  - ./travis-tool.sh r_binary_install rJava
-#  - sudo R CMD javareconf JAVA_HOME=/home/travis/.linuxbrew/Cellar/jdk/1.8.0-60
-  - sudo R CMD javareconf JAVA_HOME=/home/travis/.linuxbrew/Cellar/jdk/1.7.0_80
+  - sudo R CMD javareconf JAVA_HOME=/home/travis/.linuxbrew/Cellar/jdk/1.8.0-60
+#  - sudo R CMD javareconf JAVA_HOME=/home/travis/.linuxbrew/Cellar/jdk/1.7.0_80
   - Rscript -e "install.packages('rJava', type='source', repos = 'http://cran.nexr.com');"
   - ./travis-tool.sh r_binary_install stringr
   - ./travis-tool.sh r_binary_install KoNLP
@@ -29,7 +29,6 @@ install:
   - ./travis-tool.sh install_deps
 
 before_script:
-# - R CMD javareconf
 - Rscript -e "library(rJava); .jinit(); .jcall('java/lang/System','S','getProperty','sun.boot.library.path');"
 - R CMD INSTALL .
 - Rscript -e "library(rJava); library(stringr); library(KoNLP); library(testthat);"
