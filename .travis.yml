@@ -22,7 +22,7 @@ install:
   - ./travis-tool.sh install_deps
 
 before_script:
-- Rscript -e "library(rJava); .jnew('java.lang.System')$getProperties()"
+- Rscript -e "library(rJava); .jinit(); .jnew('java.lang.System')$getProperties()"
 - R CMD INSTALL .
 - Rscript -e "library(stringr); library(KoNLP); library(testthat)"
 script: ./travis-tool.sh run_tests
