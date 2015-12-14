@@ -26,12 +26,13 @@ install:
   - ./travis-tool.sh r_binary_install stringr
   - ./travis-tool.sh r_binary_install KoNLP
   - ./travis-tool.sh r_binary_install testthat
+  - ./travis-tool.sh r_binary_install devtools
   - ./travis-tool.sh install_deps
 
 before_script:
 - Rscript -e "library(rJava); .jinit(); .jcall('java/lang/System','S','getProperty','sun.boot.library.path');"
 - R CMD INSTALL .
-- Rscript -e "library(rJava); library(stringr); library(KoNLP); library(testthat);"
+# - Rscript -e "library(rJava); library(stringr); library(KoNLP); library(testthat); library(devtools);"
 
 script: ./travis-tool.sh run_tests
 
