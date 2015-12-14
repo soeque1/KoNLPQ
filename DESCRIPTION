@@ -9,6 +9,6 @@ Description: More about what it does (maybe more than one line)
 License: GPL-3
 Encoding: UTF-8
 Depends: R (>= 2.15.0), rJava (>= 0.9-0), utils (>= 2.14.0), stringr
-        (>= 0.6.2), KoNLP (>= 0.7.0), testthat (>= 0.5.0), devtools (>= 1.0.0)
+        (>= 0.6.2), KoNLP (>= 0.7.0), testthat (>= 0.5.0)
 Collate: 'onLoad.R' 'koAnalyzerRun.R'
 NeedsCompilation: no
