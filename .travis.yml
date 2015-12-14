@@ -22,10 +22,9 @@ install:
   - ./travis-tool.sh install_deps
 
 before_script:
-# Install dplyr package then cache sqlite and postgres version of Lahman
+- Rscript -e "library(rJava); .jnew("java.lang.System")$getProperties()"
 - R CMD INSTALL .
-- Rscript -e "library(rJava); library(stringr); library(KoNLP); library(testthat)"
-# lahman_postgres; #nycflights13_postgres()
+- Rscript -e "library(stringr); library(KoNLP); library(testthat)"
 script: ./travis-tool.sh run_tests
 
 after_failure:
