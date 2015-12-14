@@ -8,7 +8,7 @@ before_install:
   - export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
   - export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
   - brew install jdk
-  - export JAVA_HOME=/home/travis/.linuxbrew/Cellar/jdk/1.7.0_79
+  - export JAVA_HOME=/home/travis/.linuxbrew/Cellar/jdk/1.8.0-60
   - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
   - chmod 755 ./travis-tool.sh
   - ./travis-tool.sh bootstrap
@@ -23,7 +23,7 @@ install:
   - ./travis-tool.sh install_deps
 
 before_script:
-- R CMD javareconf
+# - R CMD javareconf
 - Rscript -e "library(rJava); .jinit(); .jcall('java/lang/System','S','getProperty','sun.boot.library.path');"
 - R CMD INSTALL .
 - Rscript -e "library(rJava); library(stringr); library(KoNLP); library(testthat);"
