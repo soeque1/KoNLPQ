@@ -4,6 +4,7 @@ sudo: required
 before_install:
   - jdk_switcher use openjdk7
   - java -version
+  - unset JAVA_HOME
   - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
   - chmod 755 ./travis-tool.sh
   - ./travis-tool.sh bootstrap
