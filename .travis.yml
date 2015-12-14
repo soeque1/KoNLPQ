@@ -16,7 +16,7 @@ install:
   - mkdir ~/.R
   - ./travis-tool.sh install_github jimhester/covr
 #  - ./travis-tool.sh r_binary_install rJava
-  - Rscript -e "install.packages("rJava", type="source");"
+  - Rscript -e "install.packages('rJava', type='source', repos = 'http://cran.nexr.com');"
   - ./travis-tool.sh r_binary_install stringr
   - ./travis-tool.sh r_binary_install KoNLP
   - ./travis-tool.sh r_binary_install testthat
