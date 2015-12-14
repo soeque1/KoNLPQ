@@ -2,9 +2,13 @@ language: c
 sudo: required
 
 before_install:
-  - jdk_switcher use openjdk7
+  - rm -rf ~/.linuxbrew
+  - export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+  - brew install jdk
+  - export JAVA_HOME=/home/travis/.linuxbrew/Cellar/jdk/1.8.0-60
+#  - jdk_switcher use openjdk7
   - java -version
-  - sudo ln -f -s $(/usr/libexec/java_home)/jre/lib/server/libjvm.dylib /usr/lib
+#  - sudo ln -f -s $(/usr/libexec/java_home)/jre/lib/server/libjvm.dylib /usr/lib
   - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
   - chmod 755 ./travis-tool.sh
   - ./travis-tool.sh bootstrap
@@ -12,7 +16,7 @@ install:
   - mkdir ~/.R
   - ./travis-tool.sh install_github jimhester/covr
 #  - ./travis-tool.sh r_binary_install rJava
-  - sudo R CMD javareconf JAVA_HOME=/usr/lib/jvm/java-7-oracle/jre
+  - sudo R CMD javareconf JAVA_HOME=/home/travis/.linuxbrew/Cellar/jdk/1.8.0-60
   - Rscript -e "install.packages('rJava', type='source', repos = 'http://cran.nexr.com');"
   - ./travis-tool.sh r_binary_install stringr
   - ./travis-tool.sh r_binary_install KoNLP
