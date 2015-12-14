@@ -1,6 +1,4 @@
-language: r
-sudo: required
-warnings_are_errors: false
+language: c
 
 before_install:
   - rm -rf ~/.linuxbrew
@@ -10,16 +8,37 @@ before_install:
   - export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
   - brew install jdk
   - export JAVA_HOME=/home/travis/.linuxbrew/Cellar/jdk/1.7.0_79
+  - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
+  - chmod 755 ./travis-tool.sh
+  - ./travis-tool.sh bootstrap
+install:
+  - mkdir ~/.R
+  - ./travis-tool.sh install_github jimhester/covr
+  - ./travis-tool.sh r_binary_install rJava
+  - ./travis-tool.sh r_binary_install stringr
+  - ./travis-tool.sh r_binary_install KoNLP
+  - ./travis-tool.sh r_binary_install testthat
+  - ./travis-tool.sh install_deps
 
-r_binary_packages:
- - rJava
- - stringr
- - KoNLP
- - devtools
- - testthat
- 
-r_github_packages:
- - jimhester/covr
+before_script:
+# Install dplyr package then cache sqlite and postgres version of Lahman
+  - R CMD INSTALL .
+  - Rscript -e "library(rJava); library(stringr); library(KoNLP); library(testthat)"
+# lahman_postgres; #nycflights13_postgres()
+script: ./travis-tool.sh run_tests
 
-after_success:
- - Rscript -e 'covr::codecov()'
+after_failure:
+  - ./travis-tool.sh dump_logs
+
+# after_success:
+ - Rscript -e 'library(covr);coveralls()'
+
+branches:
+  except:
+  - /-expt$/
+  - solaris
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
