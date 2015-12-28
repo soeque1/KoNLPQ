@@ -7,7 +7,15 @@
 </a>
 NLPs
 
+### 준비사항
+
+#### Windows
+#### MAC
+'sudo ln -f -s $(/usr/libexec/java_home)/jre/lib/server/libjvm.dylib /usr/lib'
+
 ### 실행법
+Java Ver 7 이상
+install.packages("rJava", type="source")
 library(devtools)  
 install_github('soeque1/KoNLPQ')  
 library(KoNLPQ)  
