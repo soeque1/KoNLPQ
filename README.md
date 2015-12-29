@@ -9,17 +9,20 @@ NLPs
 
 ### 준비사항
 
+Java Ver 7 이상  
+install.packages("rJava", type="source")  
+
 #### Windows
+
 #### MAC
 'sudo ln -f -s $(/usr/libexec/java_home)/jre/lib/server/libjvm.dylib /usr/lib'
 
-### 실행법
-Java Ver 7 이상
-install.packages("rJava", type="source")
+#### 공통 
 library(devtools)  
 install_github('soeque1/KoNLPQ')  
 library(KoNLPQ)  
 
+### 실행법
 ##### 일반 문장에서 명사 추출
 strings = '오늘도 술로 밤을 채우고'  
 KoNLP::extractNoun(strings)  

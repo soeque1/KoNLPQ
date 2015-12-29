@@ -8,3 +8,14 @@ expect_equal(noun.kkma, c('오늘', '술', '밤'))
 twi.kkma <- twi.extractPOS(strings, "N")
 expect_equal(noun.kkma, c('오늘', '술', '밤'))
 })
+
+test_that("extractVerb", {
+strings <- '오늘도 술로 밤을 채우고'
+verb.kkma <- kkma.extractPOS(strings, "V")
+expect_equal(verb.kkma, c('오', '채우'))
+
+twi.kkma <- twi.extractPOS(strings, "V")
+expect_equal(verb.kkma, c('채우다'))
+})
+
+
