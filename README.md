@@ -45,4 +45,4 @@ twi.extractPOS(strings, "NV")
 
 ### 참고
 
-<a href="https://gist.github.com/soeque1/3c8e98eec52675bf0ea2.js", TARGET='_blank' >GIST</a>
+<a href="https://gist.github.com/soeque1/3c8e98eec52675bf0ea2" target="_blank">GIST</a>
