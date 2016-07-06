@@ -42,3 +42,7 @@ twi.extractPOS(strings, "V")
 ##### 명사 또는 동사 추출
 kkma.extractPOS(strings, "NV")  
 twi.extractPOS(strings, "NV")  
+
+### 참고
+
+<script src="https://gist.github.com/soeque1/3c8e98eec52675bf0ea2.js"></script>
